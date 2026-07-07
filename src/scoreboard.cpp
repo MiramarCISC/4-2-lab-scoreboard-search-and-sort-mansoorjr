@@ -5,7 +5,7 @@ using namespace std;
 bool isValidSize(int size) {
     return size > 0;
 }
-int calculateTotal(const int scores[], int size) {
+int calculateTotal(const int scores[], int size) { //Aidan: Could Levae the instructions next time, makes it easier to understand what exactly is being done
     if (scores == nullptr || size <= 0) return 0;
     int total = 0;
     for (int i = 0; i < size; i++) {
@@ -22,9 +22,8 @@ int findLowest(const int scores[], int size) {
     int lowest = scores[0];
     for (int i = 1; i < size; i++) {
         if (scores[i] < lowest) {
-            lowest = scores[i];
-        }
-    }
+            lowest = scores[i];}
+        } // Aidan: Could remove the extra lines of space to mkae the code less lengthy
     return lowest;
 }
 int findHighest(const int scores[], int size) {
@@ -32,11 +31,9 @@ int findHighest(const int scores[], int size) {
     int highest = scores[0];
     for (int i = 1; i < size; i++) {
         if (scores[i] > highest) {
-            highest = scores[i];
-        }
+            highest = scores[i];} //Same here too
     }
-    return highest;
-}
+    return highest;}
 int findScore(const int scores[], int size, int target) {
     if (scores == nullptr || size <= 0) return -1;
     for (int i = 0; i < size; i++) {
