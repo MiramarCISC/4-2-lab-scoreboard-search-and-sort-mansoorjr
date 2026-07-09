@@ -6,6 +6,7 @@ bool isValidSize(int size) {
     return size > 0;
 }
 
+// Returns 0 if array is null or size is invalid, otherwise adds all scores
 int calculateTotal(const int scores[], int size) {
     if (scores == nullptr || size <= 0) return 0;
     int total = 0;
@@ -53,7 +54,7 @@ int findScore(const int scores[], int size, int target) {
     return -1;
 }
 
-// Uses temp variable to swap values without losing any data
+// Uses temp variable to avoid losing data during swap
 void sortScores(int scores[], int size) {
     for (int start = 0; start < size - 1; start++) {
         int minIndex = start;
