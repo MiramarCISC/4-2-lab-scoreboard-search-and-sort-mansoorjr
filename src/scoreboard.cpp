@@ -5,6 +5,7 @@ using namespace std;
 bool isValidSize(int size) {
     return size > 0;
 }
+
 int calculateTotal(const int scores[], int size) {
     if (scores == nullptr || size <= 0) return 0;
     int total = 0;
@@ -13,10 +14,13 @@ int calculateTotal(const int scores[], int size) {
     }
     return total;
 }
+
 double calculateAverage(const int scores[], int size) {
     if (scores == nullptr || size <= 0) return 0.0;
     return (double)calculateTotal(scores, size) / size;
 }
+
+// Starts at index 1 since lowest is already set to scores[0]
 int findLowest(const int scores[], int size) {
     if (scores == nullptr || size <= 0) return 0;
     int lowest = scores[0];
@@ -27,6 +31,7 @@ int findLowest(const int scores[], int size) {
     }
     return lowest;
 }
+
 int findHighest(const int scores[], int size) {
     if (scores == nullptr || size <= 0) return 0;
     int highest = scores[0];
@@ -37,6 +42,7 @@ int findHighest(const int scores[], int size) {
     }
     return highest;
 }
+
 int findScore(const int scores[], int size, int target) {
     if (scores == nullptr || size <= 0) return -1;
     for (int i = 0; i < size; i++) {
@@ -46,6 +52,8 @@ int findScore(const int scores[], int size, int target) {
     }
     return -1;
 }
+
+// Uses temp variable to swap values without losing any data
 void sortScores(int scores[], int size) {
     for (int start = 0; start < size - 1; start++) {
         int minIndex = start;
@@ -59,6 +67,7 @@ void sortScores(int scores[], int size) {
         scores[minIndex] = temp;
     }
 }
+
 void printScores(const int scores[], int size) {
     if (scores == nullptr || !isValidSize(size)) {
         cout << "No scores to print." << endl;
